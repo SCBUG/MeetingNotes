@@ -1,2 +1,4 @@
 The SCBUG mailing list is up on google groups.  The e-mail is SCBUG@googlegroups.com.
 
+I am working on keeping a list of info on GIT so we can also work on GITFU
+
