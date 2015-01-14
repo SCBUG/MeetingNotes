@@ -46,9 +46,7 @@ Let's look at the history, or change log, of our current branch.
 	git log
 
 Git will show us the last few changes to this repository
-We have lot's of helpful ways to inspect that status and history of each of these files (additional cheatsheets may be found under the 
 
-"literature" folder).
 history of one file: git log --follow README.md
 view file differences and changes: git diff README.md
 
