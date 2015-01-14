@@ -1,0 +1,188 @@
+(Adapted from Critical Stack as a traininig prep for students attending Critical Stack Training, do not distrubute)
+
+1. Accessing the Git Rep
+
+Browse to your user id, such as http://github.com/bob
+Verify you are logged into your account
+At the top right, click Account Settings
+On the left select Repositories; you should find this app shared.
+Clone the repo from the command line; using your user agent:
+
+Change to training directory
+
+	cd /home/user/training
+
+	git clone https://YOUR_ID_HERE@github.com/SCBUG/MeetingNotes.git
+
+
+
+2. Navigating the Git Repository
+
+
+Change to the directory where you cloned the repository
+	
+	cd /home/user/training
+
+
+The first thing we need to do is configure our local git so that changes will be appropriately assigned to our user:
+	git config --global user.name "[name]"
+	git config --global user.email "[email address]"
+	git config --global color.ui auto
+Start by looking at the files in the directory.
+
+	ls
+
+Git features a distributed workflow; you have your own local full copy of the files here with the entire file history.
+We start on Branch master; let's look around a bit.
+To view the state of where we are in time, ask git:
+
+	git status
+
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+    (use "git push" to publish your local commits)
+Let's look at the history, or change log, of our current branch.
+	
+	git log
+
+Git will show us the last few changes to this repository
+We have lot's of helpful ways to inspect that status and history of each of these files (additional cheatsheets may be found under the 
+
+"literature" folder).
+history of one file: git log --follow README.md
+view file differences and changes: git diff README.md
+
+3. Creating YOUR Branch
+
+Being by asking git to show you all of the branches on the repository:
+	
+	git branch
+
+Let's create a new branch for you to stage your class work:
+	
+	git branch students/FirstnameLastname
+
+Now view the branches:
+	
+	git branch
+
+You should see your branch created.
+
+
+	git checkout students/FirstnameLastname
+
+confirm the change with git status
+Now that we are safetly on our own branch, let's begin by creating a file:
+
+	mkdir students
+	cd students
+	mkdir [yourname]
+	cd [yourname]
+
+touch empty.txt (touch creates an empty file)
+Let's change to the top of the directory structure here and find out what the directory looks like:
+
+	cd ../../
+	git status
+
+On branch students/bob
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+    students/
+git is telling us we have new files that we are not yet tracking in the database of this branch. Let's instruct git to watch them:
+
+	git add students
+
+Now inspect the config: git status
+    On branch students/bob
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+    new file:   students/bob/empty.txt
+<... continued...>
+
+The git add command has staged the file in your local branch (database). Now we need to "save it".
+We can save it with git commit, which will also load up the default editor so you can follow best practices and put a comment in with your 
+
+change
+You can shortcut this process by entering your comment on the command line: git commit -m "my comment" (do this now)
+Verify your change: 
+
+	git status
+
+View it in the history of this branch 
+
+	git log
+
+4. Sharing Your Branch
+
+
+Let's look at all of the available branches:
+
+	git branch -a
+
+Instruct git to push your branch to the server:
+
+git push origin students/bob
+
+
+
+Let's create another file:
+
+	touch students/[yourname]/yourname.txt
+
+Ask git the status:
+
+	git status
+
+Stage the file:
+
+git add students/[yourname]/[yourname]2.txt
+
+Commit the change:
+
+	git commit -m "test two"
+
+View the status; notice that git is telling us about the delta (the change between two points in time).
+
+	git status
+
+On the project website, navigate to the students/yourName directory
+Let's push only your branch back up to the repo:
+
+	git push origin students/[yourname]
+
+View your changes on the server
+
+
+5. Merging in Changes
+
+Through out class we will need to update information between everyone; let's begin by changing back to master and checking out the status.
+
+Change to the master branch:
+
+	git checkout master
+
+Confirm your status:
+	
+	git status
+
+Let's poll for any changes:
+
+	git pull
+
+We have now pulled down an "updated" version of master; let's go back to our branch.
+
+	git checkout students/[yourname]
+
+Let's merge the master changes into our branch.
+
+	git merge master
+
