@@ -110,7 +110,10 @@ The git add command has staged the file in your local branch (database). Now we 
 We can save it with git commit, which will also load up the default editor so you can follow best practices and put a comment in with your 
 
 change
-You can shortcut this process by entering your comment on the command line: git commit -m "my comment" (do this now)
+You can shortcut this process by entering your comment on the command line: 
+
+	git commit -m "my comment" 
+
 Verify your change: 
 
 	git status
