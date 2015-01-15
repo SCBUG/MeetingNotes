@@ -1,5 +1,13 @@
 (Adapted from Critical Stack as a traininig prep for students attending Critical Stack Training, do not distrubute)
 
+You will need to register a user at github -  www.github.com (you just need the free one)
+Once you do that send me your ID so I can add you to the SCBUG repository.  (you could also create your own repository and complete the 
+
+exercises.
+
+Your class will use a linux command line environment - you should complete the exercises from a common flavor of linux - CENT, FEDORA, UBUNTU
+
+
 1. Accessing the Git Rep
 
 Browse to your user id, such as http://github.com/bob
